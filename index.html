@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <meta name="theme-color" content="#03050b" />
+    <meta name="description" content="ChronoLux Precision Time Engine" />
+
+    <title>ChronoLux — Precision Time Engine</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- BACKGROUND -->
+    <div class="background">
+        <div class="grid"></div>
+        <div class="ambient ambient-one"></div>
+        <div class="ambient ambient-two"></div>
+        <div class="ambient ambient-three"></div>
+        <div class="stars"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="topbar">
+
+        <div class="brand">
+            <div class="brand-orb">
+                <span></span>
+            </div>
+
+            <div>
+                <div class="brand-name">CHRONOLUX</div>
+                <div class="brand-subtitle">
+                    PRECISION TIME ENGINE
+                </div>
+            </div>
+        </div>
+
+        <div class="live-status">
+            <span class="live-dot"></span>
+            <span>LIVE</span>
+        </div>
+
+        <button
+            class="fullscreen-btn"
+            id="fullscreenBtn"
+            aria-label="Toggle fullscreen"
+        >
+            ⛶
+        </button>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <div class="eyebrow">
+            <span></span>
+            THE MOMENT IS NOW
+            <span></span>
+        </div>
+
+
+        <!-- CLOCK -->
+        <section class="clock-area">
+
+            <div class="clock">
+
+                <!-- OUTER DECORATION -->
+                <div class="orbit orbit-a"></div>
+                <div class="orbit orbit-b"></div>
+                <div class="orbit orbit-c"></div>
+
+                <div class="outer-glow"></div>
+
+                <!-- 60 TICKS -->
+                <div class="ticks" id="ticks"></div>
+
+                <!-- 12 NUMBERS -->
+                <div class="numbers" id="numbers"></div>
+
+                <!-- TOP MARKER -->
+                <div class="top-marker"></div>
+
+                <!-- MOVING SECOND ORBIT DOT -->
+                <div class="second-orbit-dot" id="secondOrbitDot"></div>
+
+                <!-- CLOCK FACE -->
+                <div class="face">
+
+                    <div class="face-ring"></div>
+
+                    <div class="inner-glow"></div>
+
+                    <div class="location-row">
+                        <span>LOCAL TIME</span>
+                        <span>IST · UTC+5:30</span>
+                    </div>
+
+                    <!-- DIGITAL -->
+                    <div class="digital-time">
+                        <span id="digitalTime">06:30:00</span>
+                    </div>
+
+                    <div class="period" id="period">PM</div>
+
+                    <div class="milliseconds">
+                        <span id="milliseconds">000</span>
+                        <small>MILLISECONDS</small>
+                    </div>
+
+                    <div class="date-row">
+                        <span id="dayName">THURSDAY</span>
+                        <b>•</b>
+                        <span id="dateValue">30 JULY 2026</span>
+                    </div>
+
+
+                    <!-- HANDS -->
+                    <div class="hands">
+
+                        <div
+                            class="hand hour-hand"
+                            id="hourHand"
+                        ></div>
+
+                        <div
+                            class="hand minute-hand"
+                            id="minuteHand"
+                        ></div>
+
+                        <div
+                            class="hand second-hand"
+                            id="secondHand"
+                        ></div>
+
+                        <div class="center-pin">
+                            <div></div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- DATA -->
+                    <div class="clock-data">
+
+                        <div class="data-label">
+                            SECOND CYCLE
+                        </div>
+
+                        <div class="data-line">
+                            <span id="secondProgress"></span>
+                        </div>
+
+                        <div class="cycle-number">
+                            <strong id="secondValue">30</strong>
+                            <span>/ 60</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="spectrum">
+                        <span class="spectrum-dot"></span>
+                        <span>CURRENT SPECTRUM</span>
+                        <strong id="hexColor">#00F5D4</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SIDE INFO -->
+        <div class="side-info left-info">
+            <span>SYSTEM</span>
+            <strong>CHRONO</strong>
+            <small>REAL-TIME ENGINE</small>
+        </div>
+
+        <div class="side-info right-info">
+            <span>ENGINE</span>
+            <strong>ONLINE</strong>
+            <small>PRECISION CLOCK</small>
+        </div>
+
+
+        <!-- BOTTOM CARDS -->
+        <section class="cards">
+
+            <article class="info-card">
+
+                <div class="card-icon">
+                    ◎
+                </div>
+
+                <div>
+                    <span>TIMEZONE</span>
+                    <strong>ASIA / KOLKATA</strong>
+                    <small>INDIA STANDARD TIME</small>
+                </div>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <div class="card-icon">
+                    ◌
+                </div>
+
+                <div>
+                    <span>SECOND CYCLE</span>
+                    <strong id="cycleText">30 / 60</strong>
+                    <small>LIVE COLOR TRANSITION</small>
+                </div>
+
+            </article>
+
+
+            <article class="info-card">
+
+                <div class="card-icon">
+                    ✦
+                </div>
+
+                <div>
+                    <span>TIME MODE</span>
+                    <strong id="modeText">HOUR 06</strong>
+                    <small>SECOND · MINUTE · HOUR</small>
+                </div>
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <span>CHRONOLUX 5.0</span>
+        <span>PRECISION · MOTION · COLOR</span>
+        <span>SYSTEM ONLINE</span>
+    </footer>
+
+</div>
+
+<script type="module" src="/script.js"></script>
+
+</body>
+</html>
